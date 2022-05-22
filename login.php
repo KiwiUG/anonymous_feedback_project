@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 ?>
 <?php include("header.html")?>
-    <title>PHP login system!</title>
+    <title>Login</title>
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark">
