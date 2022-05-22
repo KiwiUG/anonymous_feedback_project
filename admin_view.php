@@ -7,9 +7,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 
 
-$sql = "SELECT user_id FROM users WHERE username=?";
-$username=$_SESSION['username'];
-$result=mysqli_query($conn,$sql);
+$sql = "SELECT prompt,sent_at FROM prompt WHERE user_id=".$_SESSION['user_id'];
+$result=mysqli_query($conn,$sql)
+
 ?>
 <?php include("header.html")?>
     <title>View</title></head>
@@ -28,10 +28,18 @@ $result=mysqli_query($conn,$sql);
         }
         ?>
         <?php foreach ($result as $row){ ?>
-    <div class="card text-bg-dark mb-3">
-        <div class="card-header"><?php echo $row['sent_at']?></div>
-        <div class="card-body">
-            <p class="card-text"><?php echo$row['prompt']?></p>
+<!--    <div class="card text-bg-dark mb-3">-->
+<!--        <div class="card-header">--><?php //echo $row['sent_at']?><!--</div>-->
+<!--        <div class="card-body">-->
+<!--            <p class="card-text">--><?php //echo $row['prompt']?><!--</p>-->
+<!--        </div>-->
+        <br><div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p><?php echo $row['prompt']?></p>
+                    <footer class="blockquote-footer"><?php echo $row['sent_at']?></footer>
+                </blockquote>
+            </div>
         </div>
         <?php } ?>
     </body>

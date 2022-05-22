@@ -20,11 +20,13 @@
     </body>
     </html>
 <?php
+session_start();
+if ($_SERVER['REQUEST_METHOD'] == "POST"){
 $sql = "INSERT INTO prompt(user_id,prompt) VALUES (?,?)";
 $stmt = mysqli_prepare($conn, $sql);
 if ($stmt) {
     mysqli_stmt_bind_param($stmt, "is", $user_id,$prompt);
-    $user_id=$_SESSION['user_id'];
+    $user_id  = $_SESSION['user_id'];
     $prompt = $_POST['prompt'];
 
     if (mysqli_stmt_execute($stmt)) {
@@ -33,7 +35,7 @@ if ($stmt) {
     } else {
         echo "Something went wrong... cannot redirect!";
         header("location: welcome.php");
-    }
+    }};
     mysqli_stmt_close($stmt);
     session_destroy();
 };

@@ -2,7 +2,7 @@
 <?php include("header.html")?>
 <title>Welcome</title>
 </head>
-<body class=".bg-secondary">
+<body>
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-md">
         <a class="navbar-brand" href="welcome.php">Home</a>
@@ -23,10 +23,11 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
     $temp_user_id=trim($_POST['user_id']);
-    $sql1 = "SELECT * FROM users WHERE user_id = ?";
+    $sql1 = "SELECT * FROM users WHERE user_id = ".$temp_user_id;
     $result = mysqli_query($conn, $sql1);
     $count = mysqli_num_rows($result);
     if($count==1){
+                $_SESSION['user_id']= $temp_user_id;
                 header("location: prompt_input.php");
         }else{
                 echo"Your unique id was incorrect. Please enter carefully.";

@@ -8,6 +8,5 @@
 </nav>
 <h1>Thank You. Your Reply was successfully sent</h1>
 <a href="welcome.php">Want to send again?</a>
-<?php session_destroy()?>
 </body>
 </html>

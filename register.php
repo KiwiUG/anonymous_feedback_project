@@ -87,10 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         mysqli_stmt_close($stmt);
     }
     mysqli_close($conn);
-}else{
-    $user_id=rand(10000,99999);
 }
-
 ?>
 
 <?php include("header.html")?>
