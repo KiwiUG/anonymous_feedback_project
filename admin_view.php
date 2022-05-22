@@ -28,11 +28,6 @@ $result=mysqli_query($conn,$sql)
         }
         ?>
         <?php foreach ($result as $row){ ?>
-<!--    <div class="card text-bg-dark mb-3">-->
-<!--        <div class="card-header">--><?php //echo $row['sent_at']?><!--</div>-->
-<!--        <div class="card-body">-->
-<!--            <p class="card-text">--><?php //echo $row['prompt']?><!--</p>-->
-<!--        </div>-->
         <br><div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
