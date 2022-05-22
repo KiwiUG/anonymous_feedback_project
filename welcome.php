@@ -1,21 +1,21 @@
-<?php require_once 'db_connect.php'; ?>
+<?php require_once 'db_connect.php'; session_start(); ?>
 <?php include("header.html")?>
 <title>Welcome</title>
 </head>
-<body>
+<body class=".bg-secondary">
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-md">
         <a class="navbar-brand" href="welcome.php">Home</a>
-        <a class="nav-brand" href="login.php" >Log in</a>
+        <a class="nav-link link-light" href="login.php">Log in</a>
     </div>
 </nav>
 <div class="container mt-4">
-    <div id="input">
         <form action="" method="post">
-            Insert the unique id:<input type="number" name="user_id" required>
-        <button type="submit">Send</button>
+            <div class="d-flex justify-content-center align-items-center">
+                <input type="number"  placeholder="Enter the unique id provided" name="user_id" class="form-control"  required>
+                <button type="submit" class="btn btn-dark">Send</button>
+            </div>
         </form>
-    </div>
 </div>
 </body>
 </html>
@@ -28,8 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     $count = mysqli_num_rows($result);
     if($count==1){
                 header("location: prompt_input.php");
-    }else{
+        }else{
                 echo"Your unique id was incorrect. Please enter carefully.";
-            }};
+            };
+};
     mysqli_close($conn);
 ?>

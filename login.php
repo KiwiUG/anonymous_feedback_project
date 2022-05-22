@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     </div>
 </nav>
 <div class="container mt-4">
-    <form action="login.php" method="post" class="">
+    <form action="login.php" method="post" class="form -control">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
         <label for="username" class="sr-only">Username:</label>

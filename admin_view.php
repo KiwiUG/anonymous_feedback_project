@@ -17,30 +17,22 @@ $result=mysqli_query($conn,$sql);
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-md">
             <a class="navbar-brand" href="welcome.php">Home</a>
-            <a class="nav-link" href="logout.php" >Log out</a>
+            <a class="nav-link link-light" href="logout.php" >Log out</a>
         </div>
     </nav>
-    <table border="1">
-        <tr>
-            <th width="100px">Prompt</th>
-            <th>Time</th>
-        </tr>
         <?php
         if(isset($result)){
             if (mysqli_num_rows($result)==0){
-                echo"<tr>";
-                echo"<td colspan='7'>No Data Found!!!</td>";
-                echo"</tr>";
+                echo"No Data Found!!";
             }
         }
         ?>
         <?php foreach ($result as $row){ ?>
-            <tr>
-                <td><?php echo$row['prompt']?></td>
-                <td><?php echo $row['sent_at']?></td>
-            </tr>
-
+    <div class="card text-bg-dark mb-3">
+        <div class="card-header"><?php echo $row['sent_at']?></div>
+        <div class="card-body">
+            <p class="card-text"><?php echo$row['prompt']?></p>
+        </div>
         <?php } ?>
-    </table>
     </body>
     </html>
