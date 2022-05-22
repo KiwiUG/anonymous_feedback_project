@@ -1,15 +1,16 @@
-<?php require_once 'db_connect.php' ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Home</title>
+<?php require_once 'db_connect.php';
+session_start(); ?>
+<?php include("header.html")?>
+<title>Welcome</title>
 </head>
 <body>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="welcome.php">Home</a>
+</nav>
 <div class="container mt-4">
     <div id="input">
         <form action="" method="post">
             Insert the unique id:<input type="number" name="user_id" required>
-            Enter Your text here:<input type="text" name="prompt" required>
         <button type="submit">Send</button>
         </form>
     </div>
@@ -24,25 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     $result = mysqli_query($conn, $sql1);
     $count = mysqli_num_rows($result);
     if($count==1){
-                $sql = "INSERT INTO prompt(user_id,prompt) VALUES (?,?)";
-                $stmt = mysqli_prepare($conn, $sql);
-                if ($stmt) {
-                    mysqli_stmt_bind_param($stmt, "is", $user_id,$prompt);
-                    $user_id=$temp_user_id;
-                    $prompt = $_POST['prompt'];
-
-                    if (mysqli_stmt_execute($stmt)) {
-                        header("location: success.php");
-                        mysqli_stmt_close($stmt);
-                    } else {
-                        echo "Something went wrong... cannot redirect!";
-                        mysqli_stmt_close($stmt);
-                    }
-                };}else{
+                header("location: prompt_input.php");
+    }else{
                 echo"Your unique id was incorrect. Please enter carefully.";
             }};
     mysqli_close($conn);
-
-
-
 ?>

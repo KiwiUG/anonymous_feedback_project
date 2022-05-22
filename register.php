@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 // If there were no errors, go ahead and insert into the database
     if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
-        $sql = "INSERT INTO users (username, password,user_id) VALUES (?, ?,?)";
+        $sql = "INSERT INTO users (username, password, user_id) VALUES (?, ?, ?)";
         $stmt = mysqli_prepare($conn, $sql);
         if ($stmt) {
             mysqli_stmt_bind_param($stmt, "ssi", $param_username, $param_password,$param_user_id);
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 ?>
 
-<?php include"header.html"?>
+<?php include("header.html")?>
 </head>
 <body>
 <h1>Php Login System</h1>
