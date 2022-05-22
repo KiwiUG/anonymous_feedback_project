@@ -14,6 +14,12 @@ $result=mysqli_query($conn,$sql);
 <?php include("header.html")?>
     <title>View</title></head>
     <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-md">
+            <a class="navbar-brand" href="welcome.php">Home</a>
+            <a class="nav-link" href="logout.php" >Log out</a>
+        </div>
+    </nav>
     <table border="1">
         <tr>
             <th width="100px">Prompt</th>

@@ -3,6 +3,12 @@
         <title>Home</title>
     </head>
     <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-md">
+            <a class="navbar-brand" href="welcome.php">Home</a>
+            <a class="nav-link" href="login.php" >Log in</a>
+        </div>
+    </nav>
     <div class="container mt-4">
         <div id="input">
             <form action="" method="post">

@@ -68,6 +68,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     <title>PHP login system!</title>
 </head>
 <body>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-md">
+        <a class="navbar-brand" href="welcome.php">Home</a>
+    </div>
+</nav>
 <div class="container mt-4">
     <form action="login.php" method="post" class="">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>

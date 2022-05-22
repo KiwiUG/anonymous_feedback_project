@@ -96,9 +96,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <?php include("header.html")?>
 </head>
 <body>
-<h1>Php Login System</h1>
-
-
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-md">
+        <a class="navbar-brand" href="welcome.php">Home</a>
+    </div>
+</nav>
 <div class="container mt-4">
     <hr>
     <form action="register.php" method="post">
